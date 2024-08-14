@@ -1,0 +1,11 @@
+@for(card of cards | slice: 0 : endIndex; track card.title; let index = $index) {
+  <app-card 
+    [card]="card"
+
+  />
+}
+<div
+  class="visibility-trigger"
+  observeElement
+  (isIntersecting)="isIntersecting($event)">
+</div>
