@@ -18,13 +18,8 @@ export class CardListComponent {
   endIndex = DEFAULT_ITESM_VIEW;
 
   isIntersecting(isIntersecting: boolean) {
-    console.log(isIntersecting);
     if (isIntersecting) {
       this.endIndex += DEFAULT_ITESM_VIEW;
     }
-    // console.log('intersecting', index, isIntersecting);
-    // if (index + 1 >= this.endIndex && isIntersecting) {
-    //   this.endIndex += DEFAULT_ITESM_VIEW;
-    // }
   }
 }
