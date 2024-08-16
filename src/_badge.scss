@@ -1,0 +1,122 @@
+@use 'sass:list';
+
+$status-badge: status-badge;
+$badge-sizes: small, medium, large;
+$badge-x-positions: 'before', 'after';
+$badge-y-positions: 'above', 'below';
+
+$status-badges: (
+  neutral: (
+    color: var(--comp-color-text-medium),
+    variants: (
+      fill: (
+        background-color: var(--comp-color-icon-medium),
+      ),
+      light: (
+        background-color: var(--comp-color-surface-fill-2),
+      ),
+      outline: (
+        border-color: var(--comp-color-outline-hard),
+      ),
+    ),
+  ),
+  positive: (
+    color: var(--comp-color-text-on-green-container),
+    variants: (
+      fill: (
+        background-color: var(--comp-color-surface-green),
+      ),
+      light: (
+        background-color: var(--comp-color-surface-green-container),
+      ),
+      outline: (
+        border-color: var(--comp-color-icon-on-green-container),
+      ),
+    ),
+  ),
+  critical: (
+    color: var(--comp-color-text-on-error-container),
+    variants: (
+      fill: (
+        background-color: var(--comp-color-surface-error),
+      ),
+      light: (
+        background-color: var(--comp-color-surface-error-container),
+      ),
+      outline: (
+        border-color: var(--comp-color-icon-on-error-container),
+      ),
+    ),
+  ),
+  warning: (
+    color: var(--comp-color-text-orange),
+    variants: (
+      fill: (
+        color: var(--comp-color-text-on-orange-container),
+        background-color: var(--comp-color-surface-orange),
+      ),
+      light: (
+        color: var(--comp-color-text-on-orange-container),
+        background-color: var(--comp-color-surface-orange-container),
+      ),
+      outline: (
+        border-color: var(--comp-color-icon-orange),
+      ),
+    ),
+  ),
+  purples: (
+    color: var(--comp-color-text-on-purple-container),
+    variants: (
+      fill: (
+        background-color: var(--comp-color-surface-purple),
+      ),
+      light: (
+        background-color: var(--comp-color-surface-purple-container),
+      ),
+      outline: (
+        border-color: var(--comp-color-icon-purple),
+      ),
+    ),
+  ),
+  primary: (
+    color: var(--comp-color-text-on-primary-container),
+    variants: (
+      fill: (
+        background-color: var(--comp-color-surface-primary),
+      ),
+      light: (
+        background-color: var(--comp-color-surface-primary-container),
+      ),
+      outline: (
+        border-color: var(--comp-color-icon-primary),
+      ),
+    ),
+  ),
+);
+
+.#{$status-badge} {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  border-radius: 8px;
+
+  @each $type, $type-map in $status-badges {
+    $badge-variants: map-get($type-map, 'variants');
+
+    @each $variant, $variant-map in $badge-variants {
+      &.#{$type}-#{$variant}-badge {
+        border-width: 0.5px;
+        border-style: solid;
+        background-color: map-get($variant-map, 'background-color') or transparent;
+        color: map-get($variant-map, 'color');
+
+        @if $variant == fill {
+          border-color: transparent;
+        } @else {
+          border-color: map-get($variant-map, 'border-color');
+        }
+      }
+    }
+  }
+}
