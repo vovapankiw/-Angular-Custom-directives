@@ -1,0 +1,7 @@
+<h2>Add new card</h2>
+
+<form [formGroup]="form" (ngSubmit)="handleFormSubmit()" class="card-form">
+  <input type="text" formControlName="title" />
+  <app-card-description-input formControlName="description" />
+  <button type="submit">Submit</button>
+</form>
