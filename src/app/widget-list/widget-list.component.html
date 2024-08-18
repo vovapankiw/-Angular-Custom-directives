@@ -4,10 +4,10 @@
     <div class="widget-title">Weather forecast</div>
     <div class="widget-sub-title">Currently in Vienna, Austria</div>
   </ng-container>
-  <ng-container>
-    <div class="sky-condition">
+  <!-- <ng-template appWidgetContent> -->
+    <div class="sky-condition" *appWidgetContent>
       <app-sun-icon />
       <div class="temperature">+25C</div>
     </div>
-  </ng-container>
+  <!-- </ng-template> -->
 </app-widget> 
