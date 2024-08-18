@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NewCardComponent } from './new-card/new-card.component';
 import { CardListComponent } from './card-list/card-list.component';
+import { WidgetComponent } from './widget/widget.component';
+import { WidgetListComponent } from './widget-list/widget-list.component';
 
 export const routes: Routes = [
   {
@@ -11,5 +13,9 @@ export const routes: Routes = [
   {
     path: 'add-new-card',
     component: NewCardComponent,
+  },
+  {
+    path: 'projection',
+    component: WidgetListComponent,
   },
 ];

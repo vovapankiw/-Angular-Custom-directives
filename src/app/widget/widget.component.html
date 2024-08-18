@@ -1,0 +1,11 @@
+<div class="widget-header">
+  <ng-content select="[slot=header]"></ng-content>
+  <app-button>
+    <ng-content ngProjectAs="[slot='icon']" select="[slot='icon']"></ng-content>
+  </app-button>
+</div>
+<div class="widget-content">
+  <ng-content >
+    No content
+  </ng-content>
+</div>

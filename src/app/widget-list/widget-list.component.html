@@ -1,0 +1,13 @@
+<app-widget>
+  <ng-content slot='icon'>*</ng-content>
+  <ng-container ngProjectAs="[slot=header]" >
+    <div class="widget-title">Weather forecast</div>
+    <div class="widget-sub-title">Currently in Vienna, Austria</div>
+  </ng-container>
+  <ng-container>
+    <div class="sky-condition">
+      <app-sun-icon />
+      <div class="temperature">+25C</div>
+    </div>
+  </ng-container>
+</app-widget> 

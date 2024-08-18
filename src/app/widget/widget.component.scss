@@ -1,0 +1,18 @@
+:host {
+  display: block;
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 250px;
+}
+
+.widget-header {
+  border-bottom: 1px solid gray;
+}
+
+.widget-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
