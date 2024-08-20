@@ -1,0 +1,26 @@
+<div
+  class="alert alert-primary"
+  *conditionalRender="booleanValue; else: elseContents"
+>
+If condition is TRUE i will be shown.
+</div>
+
+<button class="btn btn-primary mt-3" (click)="booleanValue = !booleanValue">
+Change condition
+</button>
+
+<ng-template #elseContents>
+<div class="alert alert-primary">
+  If condition is FALSE i will be shown.
+</div>
+</ng-template>
+
+<ng-container *conditionElse="booleanValue; someData: name;  let t = name; other elseTemplate">
+  <div>Data: {{t}}</div>
+  <div *ngIf="!t">
+    <div fallback></div>
+  </div>
+</ng-container>
+<ng-template #elseTemplate>
+  <p>some falback</p>
+</ng-template>

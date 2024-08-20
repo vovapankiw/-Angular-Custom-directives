@@ -9,6 +9,11 @@
     <a routerLink="/projection">
       <status-badge color="primary" variant="outline">Projection</status-badge>
     </a>
+    <a routerLink="/condition">
+      <status-badge color="primary" variant="outline">condition</status-badge>
+    </a>
+    <p class="data-view" *select="let data from source">The data is: {{data}}</p>
+
   </div>
   <router-outlet />
 </div>

@@ -4,6 +4,7 @@ import { NewCardComponent } from './new-card/new-card.component';
 import { CardListComponent } from './card-list/card-list.component';
 import { WidgetComponent } from './widget/widget.component';
 import { WidgetListComponent } from './widget-list/widget-list.component';
+import { ConditionComponent } from './condition/condition.component';
 
 export const routes: Routes = [
   {
@@ -17,5 +18,9 @@ export const routes: Routes = [
   {
     path: 'projection',
     component: WidgetListComponent,
+  },
+  {
+    path: 'condition',
+    component: ConditionComponent,
   },
 ];
